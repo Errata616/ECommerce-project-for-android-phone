@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "999038570424",
+    "project_id": "androidecommerce-9213e",
+    "storage_bucket": "androidecommerce-9213e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:999038570424:android:df27a1b541c01bff6c494d",
+        "android_client_info": {
+          "package_name": "com.example.bt1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyht_rG9VhQTx3OOiWAfcX5aPa9ry7FhI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
