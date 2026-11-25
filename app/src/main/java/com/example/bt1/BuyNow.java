@@ -121,7 +121,6 @@ public class BuyNow extends AppCompatActivity {
                     }
 
                     else {
-                        // Tạo và lưu đơn hàng vào OrderManager
                         String orderId = "DH" + System.currentTimeMillis();
                         String date = new java.text.SimpleDateFormat("dd/MM/yyyy HH:mm", java.util.Locale.getDefault()).format(new java.util.Date());
                         OrderModel newOrder = new OrderModel(orderId, name, phone, address, finalTotalAmount, date);

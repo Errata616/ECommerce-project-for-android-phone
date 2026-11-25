@@ -422,13 +422,13 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-        View btnAll = findViewById(R.id.all);
-        View btnController = findViewById(R.id.controller);
-        View btnComponent = findViewById(R.id.component);
-        View btnCircuit = findViewById(R.id.circuit);
+        View all = findViewById(R.id.all);
+        View controller = findViewById(R.id.controller);
+        View component = findViewById(R.id.component);
+        View circuit = findViewById(R.id.circuit);
 
-        if (btnAll != null) {
-            btnAll.setOnClickListener(new View.OnClickListener() {
+        if (all != null) {
+            all.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     filterProductsByCategory("all");
@@ -436,8 +436,8 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-        if (btnController != null) {
-            btnController.setOnClickListener(new View.OnClickListener() {
+        if (controller != null) {
+            controller.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     filterProductsByCategory("controller");
@@ -445,8 +445,8 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-        if (btnComponent != null) {
-            btnComponent.setOnClickListener(new View.OnClickListener() {
+        if (component != null) {
+            component.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     filterProductsByCategory("component");
@@ -454,8 +454,8 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-        if (btnCircuit != null) {
-            btnCircuit.setOnClickListener(new View.OnClickListener() {
+        if (circuit != null) {
+            circuit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     filterProductsByCategory("circuit");
