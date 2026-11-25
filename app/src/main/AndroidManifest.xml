@@ -48,6 +48,9 @@
         <activity
             android:name=".BuyInCart" />
 
+        <activity
+            android:name=".OrderActivity" />
+
     </application>
 
 </manifest>

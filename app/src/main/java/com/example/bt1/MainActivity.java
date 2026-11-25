@@ -27,6 +27,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -201,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     AutoCompleteTextView searchBar;
     ArrayAdapter<String> searchBarSuggestion;
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -260,6 +262,31 @@ public class MainActivity extends AppCompatActivity {
 
         featuredPagerAdapter = new FeaturedPagerAdapter(this, featuredProducts);
         featuredViewPager.setAdapter(featuredPagerAdapter);
+
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setSelectedItemId(R.id.nav_home);
+        bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+                if (id == R.id.nav_home) {
+                    return true;
+                }
+
+                else if (id == R.id.nav_orders) {
+                    startActivity(new Intent(MainActivity.this, OrderActivity.class));
+                    finish();
+                    return true;
+                }
+
+                else if (id == R.id.nav_account) {
+                    startActivity(new Intent(MainActivity.this, Profile.class));
+                    finish();
+                    return true;
+                }
+                return false;
+            }
+        });
 
         searchBarSuggestion = new ArrayAdapter<>(
                 this,
@@ -441,12 +468,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
 
-                if (id == R.id.nav_profile) {
-                    Intent profile = new Intent(MainActivity.this, Profile.class);
-                    startActivity(profile);
-                }
-
-                else if (id == R.id.nav_logout) {
+                if (id == R.id.nav_logout) {
                     Intent logout = new Intent(MainActivity.this, Login.class);
                     startActivity(logout);
                 }
