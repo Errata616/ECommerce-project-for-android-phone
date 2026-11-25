@@ -21,7 +21,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -233,6 +232,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    //Tu dong chuyen sau 5s
     @Override
     protected void onResume() {
         super.onResume();
@@ -357,11 +357,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
 
-                        if (featuredProducts.isEmpty() && !allProducts.isEmpty()) {
-                            int limit = Math.min(4, allProducts.size());
-                            featuredProducts.addAll(allProducts.subList(0, limit));
-                        }
-
+                        //clear lan search thu nhat de search lan 2
                         searchBarSuggestion.clear();
                         for (Product product : searchProducts) {
                             searchBarSuggestion.add(product.getProductName());
